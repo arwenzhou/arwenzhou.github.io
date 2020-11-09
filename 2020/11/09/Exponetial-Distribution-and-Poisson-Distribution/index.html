@@ -17,7 +17,7 @@
   <meta name="description" content="Arwen Personal Website">
   <meta name="author" content="Arwen">
   <meta name="keywords" content="Marketing, CUHK">
-  <title>About - Arwen (Xiang) ZHOU</title>
+  <title>Exponetial Distribution and Poisson Distribution - Arwen (Xiang) ZHOU</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/css/bootstrap.min.css" />
 
@@ -33,6 +33,8 @@
     
   
 
+  
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
   
 
 
@@ -65,7 +67,7 @@
 
 
 <body>
-  <header style="height: 60vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -164,9 +166,46 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="About me">
+            <span class="h2" id="subtitle" title="Exponetial Distribution and Poisson Distribution">
               
             </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-11-09 14:33" pubdate>
+        November 9, 2020 pm
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      121 Words
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      2
+       Minutes
+    </span>
+  
+
+  
+  
+</div>
 
             
           </div>
@@ -179,116 +218,75 @@
 
   <main>
     
-      <div class="container nopadding-md">
-        <div class="py-5" id="board"
-          >
-          
-            <div class="about-avatar">
-              <img src="/img/avatar.png" srcset="/img/loading.gif"
-                   class="img-fluid" alt="avatar">
-            </div>
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
+      
 
-<div class="text-center">
-  <div class="about-info">
-    <div class="about-name">Xiang (Arwen) ZHOU</div>
-    <div class="about-intro">Hi! I'm a year 3 quantitative marketing PhD student from Department of Marketing CUHK.<br> I have interests in <i>empirical modelling</i>, <i>big data</i> and <i>machine learning in marketing</i>, and <i>mobile analytics</i>.<br> I also enjoy embroidery, handcraft making and Peking Opera.</div>
-    <div class="about-icons">
-      
-        
-        
-        
-        <a target="_blank" rel="noopener" href="https://drive.google.com/file/d/1tiZjZBmPKDeghF8BQ1OM8aEyqV4L3UdW/view" class="
-           hint--bottom hint--rounded"
-           aria-label=CV
-        >
-          <i class="iconfont icon-addrcard" aria-hidden="true"></i>
-          
-        </a>
-      
-        
-        
-        
-        <a href="tel:852 5424-9722" class="
-           hint--bottom hint--rounded"
-           aria-label=Phone
-        >
-          <i class="iconfont icon-mobile" aria-hidden="true"></i>
-          
-        </a>
-      
-        
-        
-        
-        <a href="mailto:xiangzhou@link.cuhk.edu.hk" class="
-           hint--bottom hint--rounded"
-           aria-label=Email
-        >
-          <i class="iconfont icon-mail" aria-hidden="true"></i>
-          
-        </a>
-      
-        
-        
-        
-        <a target="_blank" rel="noopener" href="https://github.com/arwenzhou" class="
-           hint--bottom hint--rounded"
-           aria-label=GitHub
-        >
-          <i class="iconfont icon-github-fill" aria-hidden="true"></i>
-          
-        </a>
-      
-        
-        
-        
-        <a href="javascript:;" class="qr-trigger
-           "
-           
-        >
-          <i class="iconfont icon-wechat-fill" aria-hidden="true"></i>
-          
-            <img class="qr-img" src="/img/favicon.png" srcset="/img/loading.gif" alt="qrcode" />
-          
-        </a>
-      
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Exponetial Distribution and Poisson Distribution</h1>
+            
+            <div class="markdown-body">
+              <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>In paper of Fader and Hardie<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Fader, P. S., Hardie, B. G., & Lee, K. L. (2005). “Counting your customers” the easy way: An alternative to the Pareto/NBD model. Marketing science, 24(2), 275-284.">[1]</span></a></sup>, they review <em>Pareto/NBD</em> framework for counting and forecasting number of customers in period $t$. and propose <em>BGD</em> framework. One of cores in two frameworks is adopting exponential distribution to model the distribution of purchase interval which is usually not intuitive as Poisson distribution. Hence I try to figure it out (which incents me starting this  blog <span class="github-emoji" alias="flushed" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f633.png?v8">&#x1f633;</span>) and this note is mostly based on two blogs <sup id="fnref:2"><a href="#fn:2" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="[Poisson Distribution — Intuition, Examples, and Derivation](https://towardsdatascience.com/poisson-distribution-intuition-and-derivation-1059aeab90d)">[2]</span></a></sup> <sup id="fnref:3"><a href="#fn:3" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="[Exponential Distribution — Intuition, Derivation, and Applications](https://towardsdatascience.com/what-is-exponential-distribution-7bdd08590e2a)
+">[3]</span></a></sup>.</p>
+<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Fader, P. S., Hardie, B. G., &amp; Lee, K. L. (2005). “Counting your customers” the easy way: An alternative to the Pareto/NBD model. Marketing science, 24(2), 275-284.<a href="#fnref:1" rev="footnote"> ↩</a></span></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">2.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;"><a target="_blank" rel="noopener" href="https://towardsdatascience.com/poisson-distribution-intuition-and-derivation-1059aeab90d">Poisson Distribution — Intuition, Examples, and Derivation</a><a href="#fnref:2" rev="footnote"> ↩</a></span></li><li id="fn:3"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">3.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;"><a target="_blank" rel="noopener" href="https://towardsdatascience.com/what-is-exponential-distribution-7bdd08590e2a">Exponential Distribution — Intuition, Derivation, and Applications</a><a href="#fnref:3" rev="footnote"> ↩</a></span></li></ol></div></div>
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Stat/">Stat</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Customer-Based-Analysis/">Customer-Based Analysis</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning"><a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-nd/3.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/3.0/80x15.png" srcset="/img/loading.gif" /></a><br />This work is licensed under a <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-nd/3.0/">CC BY-NC-ND 3.0 Unported License</a>.</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
     </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
   </div>
 </div>
 
-<article class="mt-5 markdown-body">
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="Research-Interest"><a href="#Research-Interest" class="headerlink" title="Research Interest"></a>Research Interest</h2><ul>
-<li>Empirical Modelling</li>
-<li>Machine Learning</li>
-<li>Big Data in Marketing</li>
-<li>Mobile Analytics</li>
-</ul>
-<h2 id="Publication"><a href="#Publication" class="headerlink" title="Publication"></a>Publication</h2><ul>
-<li>Yinglian Luo, Shan Zhu, Shun he, Xiang Zhou, et al (2016), “Weather drive industry sales of big data,” Journal of Data Analysis, 11(3), 63-90.</li>
-</ul>
-<h2 id="Working-Papers"><a href="#Working-Papers" class="headerlink" title="Working Papers"></a>Working Papers</h2><ul>
-<li>Mantian Hu, Xiang Zhou, Jingcun Cao, and Irwin King, “Recommendation Systems for Sequential Decisions,” 3rd round at Journal of Marketing Research.</li>
-<li>Jingcun Cao, Xiang Zhou, and Mantian Hu, “Using Large Scale Individual App Usage Data to Study Mobile Apps Market Structure and Future Performance,” working paper.</li>
-</ul>
-<h2 id="Conference-Presentations"><a href="#Conference-Presentations" class="headerlink" title="Conference Presentations"></a>Conference Presentations</h2><ul>
-<li>9th R Language Conference of China (Guangzhou), October 2016</li>
-<li>2017 Management Annual Meeting, November 2017</li>
-<li>41st ISMS Marketing Science Conference, June 2019</li>
-</ul>
-
-</article>
+<!-- Custom -->
 
 
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     
 
     
@@ -371,7 +369,11 @@
 
 
 
+  <script  src="https://cdn.staticfile.org/tocbot/4.12.0/tocbot.min.js" ></script>
 
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
 
 
 
@@ -413,6 +415,45 @@
 
 
 
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.staticfile.org/mathjax/3.1.2/es5/tex-svg.js" ></script>
+
+  
 
 
 
