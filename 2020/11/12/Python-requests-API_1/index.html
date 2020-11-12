@@ -17,7 +17,7 @@
   <meta name="description" content="Arwen Personal Website">
   <meta name="author" content="Arwen">
   <meta name="keywords" content="Marketing, CUHK">
-  <title>Exponetial Distribution and Poisson Distribution - Arwen (Xiang) ZHOU</title>
+  <title>Python - Get Data through API with Bearer Token (I) - Arwen (Xiang) ZHOU</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/css/bootstrap.min.css" />
 
@@ -161,12 +161,12 @@
 </nav>
 
     <div class="banner intro-2" id="background" parallax=true
-         style="background: url('/img/201109/exp-pdf.svg') no-repeat center center;
+         style="background: url('/img/201112/python-api.png') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Exponetial Distribution and Poisson Distribution">
+            <span class="h2" id="subtitle" title="Python - Get Data through API with Bearer Token (I)">
               
             </span>
 
@@ -176,8 +176,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2020-11-09 14:33" pubdate>
-        November 9, 2020 pm
+      <time datetime="2020-11-12 13:52" pubdate>
+        November 12, 2020 pm
       </time>
     </span>
   
@@ -188,7 +188,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      149 Words
+      374 Words
     </span>
   
 
@@ -198,7 +198,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      2
+      7
        Minutes
     </span>
   
@@ -228,13 +228,67 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Exponetial Distribution and Poisson Distribution</h1>
+            <h1 style="display: none">Python - Get Data through API with Bearer Token (I)</h1>
             
             <div class="markdown-body">
-              <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>In paper of Fader and Hardie<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Fader, P. S., Hardie, B. G., & Lee, K. L. (2005). “Counting your customers” the easy way: An alternative to the Pareto/NBD model. Marketing science, 24(2), 275-284.">[1]</span></a></sup>, they review <em>Pareto/NBD</em> framework for counting and forecasting number of customers in period $t$. and propose <em>BGD</em> framework. One of cores in two frameworks is adopting exponential distribution to model the distribution of purchase interval which is usually not intuitive as Poisson distribution. Hence I try to figure it out (which incents me starting this  blog <span class="github-emoji" alias="flushed" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f633.png?v8">&#x1f633;</span>) and this note is mostly based on two blogs <sup id="fnref:2"><a href="#fn:2" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="[Poisson Distribution — Intuition, Examples, and Derivation](https://towardsdatascience.com/poisson-distribution-intuition-and-derivation-1059aeab90d)">[2]</span></a></sup> <sup id="fnref:3"><a href="#fn:3" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="[Exponential Distribution — Intuition, Derivation, and Applications](https://towardsdatascience.com/what-is-exponential-distribution-7bdd08590e2a)
-">[3]</span></a></sup>.</p>
-<p>For each individual(consumer), they have $p$ probability to purchase $x$ units of goods in $n$ shopping trips, and her decision follows a binomial distribution $Bin(n,p)$.</p>
-<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Fader, P. S., Hardie, B. G., &amp; Lee, K. L. (2005). “Counting your customers” the easy way: An alternative to the Pareto/NBD model. Marketing science, 24(2), 275-284.<a href="#fnref:1" rev="footnote"> ↩</a></span></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">2.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;"><a target="_blank" rel="noopener" href="https://towardsdatascience.com/poisson-distribution-intuition-and-derivation-1059aeab90d">Poisson Distribution — Intuition, Examples, and Derivation</a><a href="#fnref:2" rev="footnote"> ↩</a></span></li><li id="fn:3"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">3.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;"><a target="_blank" rel="noopener" href="https://towardsdatascience.com/what-is-exponential-distribution-7bdd08590e2a">Exponential Distribution — Intuition, Derivation, and Applications</a><a href="#fnref:3" rev="footnote"> ↩</a></span></li></ol></div></div>
+              <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>As a Python beginner, I’m going to complete my first formal research task by Python, getting data from one open databank through API. But token is needed to be provided. So the blog is divided into two parts: retrieving token and calling API.</p>
+<p>My work is mainly based on the <code>requests</code> module in Python. <sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="[Python接口自动化之Token详解及应用](https://zhuanlan.zhihu.com/p/140391896)">[1]</span></a></sup> <sup id="fnref:2"><a href="#fn:2" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="[Quickstart for `requests`](https://requests.readthedocs.io/en/master/user/quickstart/)">[2]</span></a></sup></p>
+<h2 id="Retrieve-Token"><a href="#Retrieve-Token" class="headerlink" title="Retrieve Token"></a>Retrieve Token</h2><p>We need <code>username</code> and <code>password</code> (<code>clinet_id</code> and <code>clinet_secret</code>) to retrieve temporary token.</p>
+<pre><code class="hljs python"><span class="hljs-keyword">import</span> requests
+
+<span class="hljs-comment">#Url consists of three parts</span>
+Url = <span class="hljs-string">&#x27;domain&#x27;</span> + <span class="hljs-string">&#x27;path&#x27;</span> + <span class="hljs-string">&#x27;endpoint&#x27;</span> 
+
+<span class="hljs-comment">#Construct data params</span>
+Data = &#123;
+    <span class="hljs-string">&quot;grant_type&quot;</span> : <span class="hljs-string">&quot;password&quot;</span>,
+    <span class="hljs-string">&quot;username&quot;</span> : <span class="hljs-string">&quot;myusername&quot;</span>,
+    <span class="hljs-string">&quot;password&quot;</span> : <span class="hljs-string">&quot;mypassword&quot;</span>
+&#125;
+
+<span class="hljs-comment">#Specify headers</span>
+Headers = &#123;
+    <span class="hljs-string">&quot;Content-Type&quot;</span> : <span class="hljs-string">&quot;application/x-www-form-urlencoded&quot;</span>
+&#125;
+
+<span class="hljs-comment">#Request token by POST</span>
+res = requests.post(Url, data=Data, headers = Headers)
+
+<span class="hljs-comment">#Print returned results (including token)</span>
+print(res.json())</code></pre>
+<p>Here are the returned results:</p>
+<pre><code class="hljs python"><span class="hljs-comment">#It contains token, token type and expiration time</span>
+&#123;<span class="hljs-string">&#x27;access_token&#x27;</span>: <span class="hljs-string">&#x27;xxxxxxx&#x27;</span>, <span class="hljs-string">&#x27;refresh_token&#x27;</span>: <span class="hljs-string">&#x27;yyyyyy&#x27;</span>, <span class="hljs-string">&#x27;token_type&#x27;</span>: <span class="hljs-string">&#x27;Bearer&#x27;</span>, <span class="hljs-string">&#x27;expires_in&#x27;</span>: <span class="hljs-number">86400</span>&#125;</code></pre>
+<h2 id="Call-API"><a href="#Call-API" class="headerlink" title="Call API"></a>Call API</h2><p>Return status code to check whether your request works well. <sup id="fnref:3"><a href="#fn:3" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="[Status Code](https://stackoverflow.com/questions/59125946/unable-to-get-python-requests-with-api-token)">[3]</span></a></sup><br><pre><code class="hljs python">
+<span class="hljs-keyword">import</span> requests,json
+<span class="hljs-comment">#Another url with different path and endpoint</span>
+Url = <span class="hljs-string">&#x27;domain&#x27;</span> + <span class="hljs-string">&#x27;path&#x27;</span> + <span class="hljs-string">&#x27;endpoint&#x27;</span>
+
+<span class="hljs-comment">#Construct token</span>
+token = res.json()[<span class="hljs-string">&quot;access_token&quot;</span>] 
+token =<span class="hljs-string">&quot;Bearer&quot;</span> + <span class="hljs-string">&quot; &quot;</span> + token <span class="hljs-comment">#Remark: one blank &quot; &quot; between token type and token </span>
+<span class="hljs-comment">#print(token)</span>
+
+<span class="hljs-comment">#Specify headers, assigning token</span>
+Headers = &#123;
+    <span class="hljs-string">&quot;Authorization&quot;</span> : token,
+    <span class="hljs-string">&quot;Content-Type&quot;</span> : <span class="hljs-string">&quot;application/json&quot;</span>
+&#125;
+
+<span class="hljs-comment">#Specific json data params, depend on API</span>
+Data = &#123;
+    <span class="hljs-string">&quot;sys_take&quot;</span>: <span class="hljs-string">&quot;2&quot;</span>, 
+    <span class="hljs-string">&quot;sys_skip&quot;</span>: <span class="hljs-string">&quot;0&quot;</span>
+&#125;
+
+<span class="hljs-comment">#Call for API</span>
+pro_res = requests.post(Url, headers = Headers, json = Data)
+print(pro_res.status_code)
+print(pro_res.text)</code></pre></p>
+<p>Here are returned results:<br><pre><code class="hljs python"><span class="hljs-comment">#If Error code 4xx or 5xx is returned, you need to check your code, especially headers. (json and data are two distinct params)</span>
+<span class="hljs-number">200</span>
+<span class="hljs-string">&#x27;text&#x27;</span></code></pre><br>It should be noticed that, <code>json()</code> is successfully called does not mean your request works well. <sup id="fnref:4"><a href="#fn:4" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="[Return value of `requests`](https://blog.csdn.net/dta0502/article/details/83246807)">[4]</span></a></sup></p>
+<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;"><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/140391896">Python接口自动化之Token详解及应用</a><a href="#fnref:1" rev="footnote"> ↩</a></span></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">2.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;"><a target="_blank" rel="noopener" href="https://requests.readthedocs.io/en/master/user/quickstart/">Quickstart for <code>requests</code></a><a href="#fnref:2" rev="footnote"> ↩</a></span></li><li id="fn:3"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">3.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;"><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/59125946/unable-to-get-python-requests-with-api-token">Status Code</a><a href="#fnref:3" rev="footnote"> ↩</a></span></li><li id="fn:4"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">4.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;"><a target="_blank" rel="noopener" href="https://blog.csdn.net/dta0502/article/details/83246807">Return value of <code>requests</code></a><a href="#fnref:4" rev="footnote"> ↩</a></span></li></ol></div></div>
             </div>
             <hr>
             <div>
@@ -244,9 +298,9 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/Stat/">Stat</a>
+                      <a class="hover-with-bg" href="/tags/Python/">Python</a>
                     
-                      <a class="hover-with-bg" href="/tags/Customer-Based-Analysis/">Customer-Based Analysis</a>
+                      <a class="hover-with-bg" href="/tags/Curling/">Curling</a>
                     
                   </div>
                 
@@ -259,15 +313,15 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2020/11/12/Python-requests-API_1/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Python - Get Data through API with Bearer Token (I)</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/2020/11/09/Exponetial-Distribution-and-Poisson-Distribution/">
+                        <span class="hidden-mobile">Exponetial Distribution and Poisson Distribution</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
