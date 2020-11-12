@@ -4,7 +4,49 @@
   
   
   <entry>
-    <title>Python - Get Data through API with Bearer Token (I)</title>
+    <title>Python - Get Data through API with Bearer Token (II) - Data Processing</title>
+    <link href="/2020/11/12/Python-requests-API-2/"/>
+    <url>/2020/11/12/Python-requests-API-2/</url>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>After printing out sample returned json data, I know the object is supposed to be converted to list of dictionary and then data frame.<br><pre><code class="hljs python"><span class="hljs-comment">#Process data</span><span class="hljs-comment">#Type of object is &#x27;str&#x27;, so we need further processing</span><span class="hljs-built_in">type</span>(pro_res.text)<span class="hljs-comment">#Split json text into a list</span>dat = pro_res.text.split(<span class="hljs-string">&#x27;\n&#x27;</span>)<span class="hljs-comment">#Remove last element: &quot;&quot;</span>ind = <span class="hljs-built_in">list</span>(<span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(dat)<span class="hljs-number">-1</span>))dat = [dat[x] <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> ind]<span class="hljs-comment">#Convert list into data frame</span>df = pd.DataFrame([json.loads(x) <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> dat])<span class="hljs-comment">#Two approaches to write output</span><span class="hljs-comment">##Approach 1: directly write csv</span><span class="hljs-comment">#df.to_csv(&#x27;ProductCategory.csv&#x27;, index = False,  encoding = &quot;utf-8&quot;, sep = &quot;\t&quot;)</span><span class="hljs-comment">##Approach 2: write to compressed file to save storage resources</span>compression_opts = <span class="hljs-built_in">dict</span>(method=<span class="hljs-string">&#x27;zip&#x27;</span>,archive_name=<span class="hljs-string">&#x27;ProductCategory.csv&#x27;</span>) df.to_csv(<span class="hljs-string">&#x27;./API Data/ProductCategory/ProductCategory.zip&#x27;</span>, index = <span class="hljs-literal">False</span>, encoding = <span class="hljs-string">&quot;utf-8&quot;</span>, compression = compression_opts)</code></pre></p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Python</tag>
+      
+      <tag>Curling</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>ImportError - Can’t determine version for bottleneck</title>
+    <link href="/2020/11/12/ImportError-Can%E2%80%99t-determine-version-for-bottleneck/"/>
+    <url>/2020/11/12/ImportError-Can%E2%80%99t-determine-version-for-bottleneck/</url>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>When I import <code>pandas</code>, I get error<br><pre><code class="hljs python">ImportError: Can’t determine version <span class="hljs-keyword">for</span> bottleneck</code></pre></p><p>After uninstalling and reinstalling related packags for many times, I manully remove all <code>bottleneck_version</code> files in <code>pckgs</code> directory and install it again.</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Python</tag>
+      
+      <tag>Error Collection</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Python - Get Data through API with Bearer Token (I) - Data Collection</title>
     <link href="/2020/11/12/Python-requests-API_1/"/>
     <url>/2020/11/12/Python-requests-API_1/</url>
     
