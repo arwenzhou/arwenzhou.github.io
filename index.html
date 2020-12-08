@@ -31,8 +31,6 @@
   <link rel="stylesheet" href="/lib/prettify/tomorrow-night-eighties.min.css"  >
 
 
-  <link rel="stylesheet" href="/lib/fancybox/jquery.fancybox.min.css"  >
-
 <link rel="stylesheet" href="/css/main.css"  >
 <script src="/lib/jquery/jquery.min.js" ></script>
   <style type="text/css">
@@ -671,6 +669,18 @@ Firstly, I need to figure out wherer Poiss</div>
 
 
 
+  <script src="/lib/smooth-scroll/SmoothScroll.min.js" ></script>
+  <style type="text/css">
+    html, body{
+      scroll-behavior: smooth;
+    }
+    @media screen and (prefers-reduced-motion: reduce){
+      html, body{
+        scroll-behavior: auto;
+      }
+    }
+  </style>
+
 
   <!-- 首页文章列表随机图片 -->
   <script type="text/javascript">
@@ -701,23 +711,13 @@ Firstly, I need to figure out wherer Poiss</div>
 <script type="text/javascript">
   /* 切换背景 */
   
-  $("#background").removeClass("banner-bg");
-  $("body").addClass("banner-bg");
-  var postToTopHight = $("#board").offset().top;
-  $(window).scroll(function () {
-    var bgDisplay = false;
-    var scrollHeight = document.body.scrollTop + document.documentElement.scrollTop;
-    bgDisplay = scrollHeight >= postToTopHight;
-    if(bgDisplay) {
-      $('#background').removeClass("rgba-black-slight");
-      $('#mainContent').removeClass("rgba-black-slight");
-      $('#footerContent').removeClass("rgba-black-slight");
-    } else {
-      $('#background').addClass("rgba-black-slight");
-      $('#mainContent').addClass("rgba-black-slight");
-      $('#footerContent').addClass("rgba-black-slight");
+    $("body").removeClass("banner-bg");
+    $("#background").addClass("banner-bg");
+    $('#mainContent').removeClass("rgba-black-slight");
+    $('#footerContent').removeClass("rgba-black-slight");
+    if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent) || (/Safari/i.test(navigator.userAgent) && !/Chrome/i.test(navigator.userAgent))) {
+      $("#background").css("background-attachment", "scroll");
     }
-  });
   
 </script>
 
@@ -739,12 +739,6 @@ Firstly, I need to figure out wherer Poiss</div>
  
 
 
-  
-    <script type="text/javascript">
-      /* 页面 banner 覆盖全屏 */
-      $(".scroll-down-bar .scroll-down-arrow").css({"margin-top":"3rem"});
-      $("#board").css({"margin-top":"0"});
-    </script>
   
 </body>
 </html>

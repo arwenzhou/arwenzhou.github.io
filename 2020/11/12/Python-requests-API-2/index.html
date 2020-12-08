@@ -31,8 +31,6 @@
   <link rel="stylesheet" href="/lib/prettify/tomorrow-night-eighties.min.css"  >
 
 
-  <link rel="stylesheet" href="/lib/fancybox/jquery.fancybox.min.css"  >
-
 <link rel="stylesheet" href="/css/main.css"  >
 <script src="/lib/jquery/jquery.min.js" ></script>
   <style type="text/css">
@@ -203,9 +201,9 @@ df.to_csv(&#39;./API Data/ProductCategory/ProductCategory.zip&#39;, index = Fals
             </div>
             
               <div id="post-note">
-                <div><strong>本文作者：</strong><a href="/">Arwen (Xiang) ZHOU</a></div>
-                <div><strong>本文链接：</strong><a href="http://arwenzhou.github.io/2020/11/12/Python-requests-API-2/">http://arwenzhou.github.io/2020/11/12/Python-requests-API-2/</a></div>
-                <div><strong>版权声明：</strong><a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-nd/3.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/3.0/80x15.png" /></a><br />This work is licensed under a <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-nd/3.0/">CC BY-NC-ND 3.0 Unported License</a>.</div>
+                <div><strong>Author：</strong><a href="/">Arwen (Xiang) ZHOU</a></div>
+                <div><strong>Link：</strong><a href="http://arwenzhou.github.io/2020/11/12/Python-requests-API-2/">http://arwenzhou.github.io/2020/11/12/Python-requests-API-2/</a></div>
+                <div><strong>Copyright：</strong><a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-nd/3.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/3.0/80x15.png" /></a><br />This work is licensed under a <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-nd/3.0/">CC BY-NC-ND 3.0 Unported License</a>.</div>
               </div>
             
             
@@ -324,10 +322,6 @@ df.to_csv(&#39;./API Data/ProductCategory/ProductCategory.zip&#39;, index = Fals
     </div>
   </div>
 </div>
-
-
-
-
 
     
   </main>
@@ -503,20 +497,6 @@ df.to_csv(&#39;./API Data/ProductCategory/ProductCategory.zip&#39;, index = Fals
   </script>
 
 
-  <script src="/lib/fancybox/jquery.fancybox.min.js" ></script>
-  <script type="text/javascript">
-  /* Fancybox */
-  var setupFancybox = function () {
-    $("#post img:not(.no-zoom img, img[no-zoom])").each(function() {
-    var element = document.createElement("a");
-      $(element).attr("data-fancybox", "gallery");
-      $(element).attr("href", $(this).attr("src"));
-      $(this).wrap(element);
-    });
-  };
-  setupFancybox();
-  </script>
-
 
   
 
@@ -544,6 +524,18 @@ df.to_csv(&#39;./API Data/ProductCategory/ProductCategory.zip&#39;, index = Fals
 
   
 
+
+  <script src="/lib/smooth-scroll/SmoothScroll.min.js" ></script>
+  <style type="text/css">
+    html, body{
+      scroll-behavior: smooth;
+    }
+    @media screen and (prefers-reduced-motion: reduce){
+      html, body{
+        scroll-behavior: auto;
+      }
+    }
+  </style>
 
 
   <!-- 首页文章列表随机图片 -->
@@ -575,23 +567,13 @@ df.to_csv(&#39;./API Data/ProductCategory/ProductCategory.zip&#39;, index = Fals
 <script type="text/javascript">
   /* 切换背景 */
   
-  $("#background").removeClass("banner-bg");
-  $("body").addClass("banner-bg");
-  var postToTopHight = $("#board").offset().top;
-  $(window).scroll(function () {
-    var bgDisplay = false;
-    var scrollHeight = document.body.scrollTop + document.documentElement.scrollTop;
-    bgDisplay = scrollHeight >= postToTopHight;
-    if(bgDisplay) {
-      $('#background').removeClass("rgba-black-slight");
-      $('#mainContent').removeClass("rgba-black-slight");
-      $('#footerContent').removeClass("rgba-black-slight");
-    } else {
-      $('#background').addClass("rgba-black-slight");
-      $('#mainContent').addClass("rgba-black-slight");
-      $('#footerContent').addClass("rgba-black-slight");
+    $("body").removeClass("banner-bg");
+    $("#background").addClass("banner-bg");
+    $('#mainContent').removeClass("rgba-black-slight");
+    $('#footerContent').removeClass("rgba-black-slight");
+    if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent) || (/Safari/i.test(navigator.userAgent) && !/Chrome/i.test(navigator.userAgent))) {
+      $("#background").css("background-attachment", "scroll");
     }
-  });
   
 </script>
 
