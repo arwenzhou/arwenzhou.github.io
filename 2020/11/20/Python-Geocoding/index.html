@@ -19,7 +19,7 @@
   
   <meta http-equiv="Cache-Control" content="no-transform" />
   <meta http-equiv="Cache-Control" content="no-siteapp" />
-  <title>Python-Geocoding - Arwen (Xiang) ZHOU</title>
+  <title>Python-Geocoding [WARNING!!] - Arwen (Xiang) ZHOU</title>
   <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css"  >
 <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css"  >
 <link rel="stylesheet" href="/lib/mdbootstrap/css/mdb.min.css"  >
@@ -135,15 +135,9 @@
                 <i class="far fa-calendar-alt"></i>
                 <span class="post-date">2020-11-20&nbsp;|&nbsp;</span>
                 <i class="far fa-chart-bar"></i>
-                <span class="post-count">263</span>字&nbsp;|&nbsp;
+                <span class="post-count">306</span>字&nbsp;|&nbsp;
                 <i class="far fa-clock"></i>
                 <span class="post-count">1</span>分钟
-                
-                  <span id="busuanzi_container_page_pv" style="display:none">
-                    &nbsp;|&nbsp;
-                    <i class="far fa-eye"></i>
-                    <span id="busuanzi_value_page_pv"></span>次
-                  </span>
                 
               </p>
             
@@ -164,7 +158,12 @@
       <div class="py-5 z-depth-3" id="board">
         <div class="post-content mx-auto" id="post">
           <div class="markdown-body">
-            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>To retreive latitude and longitude of specific address of Hong Kong, I subscribe <a target="_blank" rel="noopener" href="https://console.cloud.google.com/google/maps-apis/credentials?project=testshopper">Google Maps Geocoding API</a> and install two packages <a target="_blank" rel="noopener" href="http://github.com/slimkrazy/python-google-places">googleplaces</a> and <a target="_blank" rel="noopener" href="https://github.com/googlemaps/google-maps-services-python">googlemaps</a>. The first one is  thrid-party tool and the second is official one.</p>
+            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="Warning"><a href="#Warning" class="headerlink" title="Warning"></a><strong>Warning</strong></h3><blockquote>
+<p>Please be cautious when you run the code below, especially when you turn on <code>Places API</code> and use <code>text_search</code> in <code>googlemaps</code>!!!</p>
+<p>Although requesting <em>Basic Data</em> is free, it could be quite expensive when you <code>geocode</code> address information with <code>text_search</code>. (<a target="_blank" rel="noopener" href="https://developers.google.com/maps/billing/gmp-billing?hl=en_US#text-search">Price of <code>text_search</code></a>)</p>
+</blockquote>
+<hr>
+<p>To retreive latitude and longitude of specific address of Hong Kong, I subscribe <a target="_blank" rel="noopener" href="https://console.cloud.google.com/google/maps-apis/credentials?project=testshopper">Google Maps Geocoding API</a> and install two packages <a target="_blank" rel="noopener" href="http://github.com/slimkrazy/python-google-places">googleplaces</a> and <a target="_blank" rel="noopener" href="https://github.com/googlemaps/google-maps-services-python">googlemaps</a>. The first one is  thrid-party tool and the second is official one.</p>
 <pre><code class="lang-&#123;python&#125;">pip install python-google-places
 pip install --upgrade https://github.com/slimkrazy/python-google-places/zipball/master  ## upgrade package and solve 2,500-request limit
 
@@ -230,7 +229,7 @@ class GoogleMaps(object):
                     
                       <a href="/2020/12/08/Python-How-to-burn-13-thousand-with-one-line/" id="post-nav-prev" class="col">
                         <i class="fas fa-arrow-left"></i>
-                        <span class="post-nav-title">How-to-burn-13-thousands-with-one-line</span>
+                        <span class="post-nav-title">How to burn 13 thousands with one line and get your money back</span>
                       </a>
                     
                     
@@ -282,7 +281,7 @@ class GoogleMaps(object):
              			var disqus_config = function () {
 							 this.page.url = "http://arwenzhou.github.io/2020/11/20/Python-Geocoding/";
 							 this.page.identifier = "2020/11/20/Python-Geocoding/"; 
-							 this.page.title = "Python-Geocoding";
+							 this.page.title = "Python-Geocoding [WARNING!!]";
              			};
              			(function () {
 							 var d = document, s = d.createElement('script');
@@ -331,11 +330,6 @@ class GoogleMaps(object):
     </div>
     <div class="d-none d-lg-block col-lg-2 toc-container">
       
-  <div id="toc">
-    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;TOC</p>
-    <div id="tocbot"></div>
-  </div>
-
 
     </div>
   </div>
@@ -454,8 +448,6 @@ class GoogleMaps(object):
 
 
   
-    <script src="/lib/tocbot/tocbot.min.js" ></script>
-  
   <script src="/js/post.js" ></script>
 
 <!-- Plugins -->
@@ -474,7 +466,7 @@ class GoogleMaps(object):
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "Python-Geocoding&nbsp;",
+        "Python-Geocoding [WARNING!!]&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
@@ -530,32 +522,6 @@ class GoogleMaps(object):
   </script>
 
 
-  
-
-  
-    <!-- MathJax -->
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-          tex2jax: {
-              inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-              processEscapes: true,
-              skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-          }
-      });
-
-      MathJax.Hub.Queue(function() {
-          var all = MathJax.Hub.getAllJax(), i;
-          for(i=0; i < all.length; i += 1) {
-              all[i].SourceElement().parentNode.className += ' has-jax';
-          }
-      });
-
-    </script>
-
-    <script src="https://cdn.staticfile.org/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML" ></script>
-
-  
-
 
   <script src="/lib/smooth-scroll/SmoothScroll.min.js" ></script>
   <style type="text/css">
@@ -589,9 +555,6 @@ class GoogleMaps(object):
 
 
 
-
-  <script async src="//cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" ></script>
-  
 
 
 
