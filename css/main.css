@@ -13,7 +13,7 @@ body a {
   color: #3c4858;
 }
 body a:hover {
-  color: #fe4365;
+  color: #a2cc70;
 }
 .hover-with-bg {
   display: inline-block;
@@ -79,10 +79,10 @@ body a:hover {
   color: white;
 }
 .top-nav-collapse {
-  background-color: #fc9d9a;
+  background-color: #8FBC94;
 }
 .navbar-col-show {
-  background-color: #fc9d9a;
+  background-color: #8FBC94;
 }
 @media (max-width: 768px) {
   .navbar {
@@ -328,7 +328,7 @@ a.police-beian img {
   transition: all 0.2s ease-in-out;
 }
 .sidebar-button:hover {
-  color: #fe4365;
+  color: #a2cc70;
   -webkit-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
@@ -380,7 +380,7 @@ a.police-beian img {
   color: #3c4858;
 }
 .sidebar-about a:hover {
-  color: #fe4365;
+  color: #548687;
 }
 .sidebar-author {
   margin: 0.67em 0;
@@ -407,7 +407,7 @@ a.police-beian img {
   padding: 0;
   line-height: 2rem;
   color: #ffffff;
-  background-color: #fe91b4;
+  background-color: #548687;
   text-align: center;
 }
 .sidebar-friend a,
@@ -432,7 +432,7 @@ a:hover {
   transition: all 0.2s ease-in-out;
 }
 .sidebar-friend li:hover {
-  background-color: #fe91b4;
+  background-color: #548687;
   -webkit-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
@@ -448,15 +448,15 @@ footer a {
   color: #ffffff;
 }
 footer a:hover {
-  color: #fe4365;
+  color: #548687;
 }
 footer .iconfont {
-  color: #fc9d9a;
+  color: #C5E99B;
   text-shadow: 0.1rem 0.1rem 0.5rem #ffffff;
 }
 .footer-theme a {
-  color: #fc9d9a;
-  text-shadow: 0.1rem 0.1rem 0.2rem #fe4365;
+  color: #C5E99B;
+  text-shadow: 0.1rem 0.1rem 0.2rem #548687;
 }
 .footer-hitokoto {
   max-width: 50rem;
@@ -480,14 +480,14 @@ footer .iconfont {
 #runtime:hover,
 #busuanzi_value_site_pv:hover,
 #busuanzi_value_site_uv:hover {
-  color: #fe4365;
+  color: #548687;
   text-shadow: 0.1rem 0.1rem 0.5rem white;
   -webkit-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
 ::-webkit-scrollbar {
-  background-color: #fec9c9;
+  background-color: #C5E99B;
   width: 10px;
   height: 10px;
   background-clip: padding-box;
@@ -496,12 +496,12 @@ footer .iconfont {
   display: none;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: #fe4365;
+  background-color: #548687;
   border-radius: 5px;
   background-image: -webkit-linear-gradient(45deg, rgba(255,255,255,0.2) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0.2) 75%, transparent 75%, transparent);
 }
 ::-webkit-scrollbar-corner {
-  background-color: #fe4365;
+  background-color: #548687;
 }
 @-moz-keyframes scroll-down {
   0% {
@@ -745,8 +745,8 @@ h6::before {
 }
 .tocbot-active-link {
   font-weight: 600;
-  color: #fe4365;
-  text-shadow: 0.1em 0.1em 0.2em #ffbcbc;
+  color: #548687;
+  text-shadow: 0.1em 0.1em 0.2em #c8c8a9;
 }
 .tocbot-is-collapsible {
   max-height: 1000px;
@@ -815,5 +815,5 @@ h6::before {
   font-weight: 350;
 }
 .tagcloud a:hover {
-  color: #fe4365 !important;
+  color: #a2cc70 !important;
 }

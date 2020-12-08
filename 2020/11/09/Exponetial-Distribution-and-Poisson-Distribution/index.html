@@ -204,7 +204,7 @@ Pois(x = k) = \frac{\lambda^{k} e^{-\lambda}}{k!}
 Pois(x = 0) = \frac{\lambda^{0} e^{-\lambda}}{0!} = e^{-\lambda}
 \end{align*}</script><p>How about probability distribution of “nothing happens during the time duration $t$” ? (<strong>Poisson distribution assumes that transactions occurs independently to each other</strong>)</p>
 <script type="math/tex; mode=display">\begin{align*}
-&P(T>t)
+&P(T>t)\\
 &= P(Nothing\quad happens\quad during\quad t\quad time\quad units)\\
 &= P(X=0\quad in\quad the\quad first\quad time\quad unit)\times P(X=0\quad in\quad the\quad second\quad time\quad unit)\\
 &\times\cdots \times P (X=0\quad in\quad the\quad t-th\quad time\quad unit)\\
@@ -293,7 +293,7 @@ f(t) = \frac{d}{dt}P(T \le t)= \frac{d}{dt}(1 - e^{-\lambda t} )= \lambda e^{-\l
 						});
 					} else {
 						/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-						var disqus_shortname = '';
+						var disqus_shortname = 'fluid';
 						
 						/* * * DON'T EDIT BELOW THIS LINE * * */
              			var disqus_config = function () {
