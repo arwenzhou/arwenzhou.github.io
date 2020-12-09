@@ -15,11 +15,11 @@
     <meta name="description" content="Arwen Personal Website">
   
   
-    <meta name="keywords" content="Python,API,Issue," />
+    <meta name="keywords" content="Python,API," />
   
   <meta http-equiv="Cache-Control" content="no-transform" />
   <meta http-equiv="Cache-Control" content="no-siteapp" />
-  <title>How to burn 13 thousands with one line and get your money back - Arwen (Xiang) ZHOU</title>
+  <title>(CAUTION) Unexpected High Bill Amount When Using googlemaps in Python - Arwen (Xiang) ZHOU</title>
   <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css"  >
 <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css"  >
 <link rel="stylesheet" href="/lib/mdbootstrap/css/mdb.min.css"  >
@@ -74,7 +74,7 @@
           
           
           <li class="nav-item">
-            <a class="nav-link" href="/about/">About</a>
+            <a class="nav-link" href="/about/">About me</a>
           </li>
         
           
@@ -135,9 +135,9 @@
                 <i class="far fa-calendar-alt"></i>
                 <span class="post-date">2020-12-08&nbsp;|&nbsp;</span>
                 <i class="far fa-chart-bar"></i>
-                <span class="post-count">650</span>字&nbsp;|&nbsp;
+                <span class="post-count">1.4k</span>字&nbsp;|&nbsp;
                 <i class="far fa-clock"></i>
-                <span class="post-count">2</span>分钟
+                <span class="post-count">6</span>分钟
                 
               </p>
             
@@ -158,7 +158,48 @@
       <div class="py-5 z-depth-3" id="board">
         <div class="post-content mx-auto" id="post">
           <div class="markdown-body">
-            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>Thanks to ‘one of the best’ standup comedian, Master MA Baoguo, I got over from losing 13 thousands HKD, and encouraged myself to solve this mess.</p>
+            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><blockquote>
+<p>I am really grateful that I have the warmest support from my advisor and friends during this hard time.<br>最下方有本文的“马保国全文背诵版”，感谢阿Q精神，差点丢了1w3，但是没失去快乐。（You can find the Chinese version of my experience for a joke.)</p>
+</blockquote>
+<p>To be frank, I think the subtitle of this blog should be “How to burn 13 thousands with one line and get your money back”. </p>
+<p>Last month, I had to deal with a large list of address and geocode them to latitude and longitude. To complete all transformation in hand is almost impossible. So it is natural that using map API to solve this issue. There is no doubt that Google Maps performs the best when processing address in English. And I found that Google offers an official python toolkit <code>googlemaps</code>, and can saves lots of time.</p>
+<p>Before turn on two APIs required by <code>googlemaps</code>, “Places API” and “Geocoding API”, I also checked the pricing plan of Google Maps Platform. Google Maps Platform uses a pay-as-you-go pricing model. Users can request <a target="_blank" rel="noopener" href="https://developers.google.com/maps/billing/gmp-billing?hl=en_US#basic-data">basic data</a> for free and the price of <a target="_blank" rel="noopener" href="https://developers.google.com/maps/billing/gmp-billing?hl=en_US#geocoding">geocoding</a> is not quite expensive (no more than 5 USD per 1000 requests).</p>
+<p>After searching and browsing tutorials about Google Maps Platform, I finally chose to use the python function suggested by <a target="_blank" rel="noopener" href="https://blog.csdn.net/dongyouyuan/article/details/76618442">DHogan</a><sup id="fnref:2"><a href="#fn:2" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="[Tutorial for GoolgeMaps API in Python](https://blog.csdn.net/dongyouyuan/article/details/76618442)
+">[2]</span></a></sup>, and my code can be found in <a href="https://arwenzhou.github.io/2020/11/20/Python-Geocoding/">this blog</a><sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="[Python-Geocoding](https://arwenzhou.github.io/2020/11/20/Python-Geocoding/)
+">[1]</span></a></sup>. However, geocoding the address by <code>text_search</code> function in <code>googlemaps</code> is fairly expensive (<a target="_blank" rel="noopener" href="https://developers.google.com/maps/billing/gmp-billing?hl=en_US#text-search">Price of <code>text_search</code></a>), especially the prerequisite “Places API” costs tenfold as “Geocoding API” does.</p>
+<p>In that “black sunday afternoon”, I started the requesting loops with pleasure and had a cheerful dinner. Everything went well until I received the  payment notification from my credit card bank. Although I shut the program as soon as possible, the few lines of codes cost my 13 thousand bucks…</p>
+<p><img src="/img/201208/fee-total.png" srcset="/img/loading.gif" alt="Total Cost"></p>
+<p>So, </p>
+<ul>
+<li>PLEASE CHECK THE PRICE FOR EACH LINE OF YOUR CODE WHEN USING <strong>PAID APIs</strong>.</li>
+<li>SET <strong>REQUEST LIMIT</strong> FOR YOUR APIS AVOIDING FATAL ATTACKS.</li>
+<li>SET CONSUMPTION LIMIT FOR EVERY <strong>PAY-AS-YOU-GO ACCOUNT</strong>.</li>
+</ul>
+<p>Fortunately, another GMP user’s refund experience gave me hope.<sup id="fnref:3"><a href="#fn:3" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="[[Be careful] Google OAuth + Google Cloud API may not behave as expected](https://1c7.me/google-oauth-and-google-cloud-api-may-cost-you-money-instead-of-end-user/)">[3]</span></a></sup> (Sincerely thanks to <a target="_blank" rel="noopener" href="https://1c7.me/">CHENG ZHENG</a>) I contacted GMP team immediately by both phone call and email. Here is the flow of GMP support for my issue.</p>
+<p><img src="/img/201208/GMP-Support-Diagram.svg" srcset="/img/loading.gif" alt="Flow of GMP Support"></p>
+<p>GMP provides 3 ways for users to get support from team. </p>
+<ul>
+<li>Chat: Haven’t tried, but chat support in billing section is paid service.</li>
+<li>Phone call: GMP team will create a new case for you and contact you through email too. (Later than directly submitting the case through email.) </li>
+<li>Email: Reponsive and supportive!</li>
+</ul>
+<p><img src="/img/201208/google-maps-support.png" srcset="/img/loading.gif" alt="GMP Support Page"></p>
+<p>I submitted my case through support page and chose to communicate with GMP Team by “email”. I can not find the case description any more. But, for reference, I emphasized three key points, which were also proposed in final feedback survey: </p>
+<ol>
+<li><p>The prices for functions in official toolkit <code>googlemaps</code> are not clear and transparent enough. </p>
+</li>
+<li><p>The cost of prerequisite ‘Places API’ is unexpected, since user only takes the geocoding services.</p>
+</li>
+<li><p>The consumption nofication is delayed, user can hardly stop the program or request in time.<br><img src="/img/201208/fee1100.jpg" srcset="/img/loading.gif" alt="Payment Notification"></p>
+</li>
+</ol>
+<p>However, I have to tell that GMP team acted promptly and gave me genial helps and I list all emails between GMP and me FYI.</p>
+<p>From billing team:<br><img src="/img/201208/email1.png" srcset="/img/loading.gif" alt="Email1"><br>My reply to billing team<br><img src="/img/201208/email2.png" srcset="/img/loading.gif" alt="Email2"><br>From tech team (including tutorial for <strong>restricting API key</strong> and <strong>setting daily request limits</strong>):<br><img src="/img/201208/email3.png" srcset="/img/loading.gif" alt="Email3"><br>My answers to tech team’s questions:<br><img src="/img/201208/email4.png" srcset="/img/loading.gif" alt="Email4"><br>From tech team (accidental usage spike is validated and tutorial for <strong>shutting down project</strong> ):<br><img src="/img/201208/email5.png" srcset="/img/loading.gif" alt="Email5"><br>My reply:<br><img src="/img/201208/email6.png" srcset="/img/loading.gif" alt="Email6"><br>My question about shutting project down:<br><img src="/img/201208/email7.png" srcset="/img/loading.gif" alt="Email7"><br>Answers from tech team:<br><img src="/img/201208/email8.png" srcset="/img/loading.gif" alt="Email8"><br>From billing team:<br><img src="/img/201208/email9.png" srcset="/img/loading.gif" alt="Email9"><br>My reply:<br><img src="/img/201208/email10.png" srcset="/img/loading.gif" alt="Email10"><br>From billing team(transferring my adjustment request to internal team):<br><strong>THIS ADJUSTMENT IS ONE TIME COURTESY!!!</strong><br><img src="/img/201208/email11.png" srcset="/img/loading.gif" alt="Email11"><br>My reply:<br><img src="/img/201208/email12.png" srcset="/img/loading.gif" alt="Email12"><br>The adjustment request is approved!!!!<br><img src="/img/201208/email13.png" srcset="/img/loading.gif" alt="Email13"><br>Some further questions:<br><img src="/img/201208/email14.png" srcset="/img/loading.gif" alt="Email14"> </p>
+<p>GMP COMPLETES THE ADJUSTMENT IN DEC 3!!!<br>I noticed that good news several days later!<br><img src="/img/201208/adjustment.png" srcset="/img/loading.gif" alt="Adjustment"> </p>
+<p>At last, I really appreciate the assistance from GMP team. We all should know that this adjustment is only one-time-courtesy and the future charge will be counted as valid.</p>
+<p><strong>PLEASE BE CAUTIOUS WHEN YOU ENABLE EVERY PAID APIs!</strong></p>
+<hr>
+<p>Thanks to ‘one of the best’ standup comedian, Master MA Baoguo, I got over from losing 13 thousands HKD, and encouraged myself to deal with the mess.</p>
 <p>Here is the <em>MA Baoguo</em> version of this story in Chinese, just have fun!</p>
 <blockquote>
 <p>朋友们好啊我是出BUG代码烧钱门掌门人。</p>
@@ -179,7 +220,7 @@
 <p>我劝这位年轻人，耗子尾汁，好好反思。以后不要再犯这样的聪明，小聪明，啊，Coding Dog要以和为贵，要讲武德，不要搞窝里斗。</p>
 <p>谢谢朋友们！</p>
 </blockquote>
-
+<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;"><a href="https://arwenzhou.github.io/2020/11/20/Python-Geocoding/">Python-Geocoding</a><a href="#fnref:1" rev="footnote"> ↩</a></span></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">2.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;"><a target="_blank" rel="noopener" href="https://blog.csdn.net/dongyouyuan/article/details/76618442">Tutorial for GoolgeMaps API in Python</a><a href="#fnref:2" rev="footnote"> ↩</a></span></li><li id="fn:3"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">3.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;"><a target="_blank" rel="noopener" href="https://1c7.me/google-oauth-and-google-cloud-api-may-cost-you-money-instead-of-end-user/">[Be careful] Google OAuth + Google Cloud API may not behave as expected</a><a href="#fnref:3" rev="footnote"> ↩</a></span></li></ol></div></div>
             <hr>
           </div>
           <br>
@@ -192,8 +233,6 @@
                   <a class="hover-with-bg" href="/tags/Python">Python</a>
                 
                   <a class="hover-with-bg" href="/tags/API">API</a>
-                
-                  <a class="hover-with-bg" href="/tags/Issue">Issue</a>
                 
               </span>
             </div>
@@ -257,7 +296,7 @@
              			var disqus_config = function () {
 							 this.page.url = "http://arwenzhou.github.io/2020/12/08/Python-How-to-burn-13-thousand-with-one-line/";
 							 this.page.identifier = "2020/12/08/Python-How-to-burn-13-thousand-with-one-line/"; 
-							 this.page.title = "How to burn 13 thousands with one line and get your money back";
+							 this.page.title = "(CAUTION) Unexpected High Bill Amount When Using googlemaps in Python";
              			};
              			(function () {
 							 var d = document, s = d.createElement('script');
@@ -442,7 +481,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "How to burn 13 thousands with one line and get your money back&nbsp;",
+        "(CAUTION) Unexpected High Bill Amount When Using googlemaps in Python&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
