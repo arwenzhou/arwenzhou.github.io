@@ -4,27 +4,6 @@
   
   
   <entry>
-    <title>Linux - FTP Connection - ECONNREFUSED</title>
-    <link href="/2022/11/29/Linux-ftp-econnection-refused/"/>
-    <url>/2022/11/29/Linux-ftp-econnection-refused/</url>
-    
-    <content type="html"><![CDATA[<h4 id="Failed-to-connect-the-sever-through-FileZilla"><a href="#Failed-to-connect-the-sever-through-FileZilla" class="headerlink" title="Failed to connect the sever through FileZilla"></a>Failed to connect the sever through FileZilla</h4><ul><li>The error information:</li></ul><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">ECONNREFUSED</span> - 连接被服务器拒绝<br></code></pre></td></tr></table></figure><ul><li>Follow 小明同学YYDS’s solution</li></ul><p><a href="https://blog.csdn.net/maoyuanming0806/article/details/78539655">https://blog.csdn.net/maoyuanming0806/article/details/78539655</a></p>]]></content>
-    
-    
-    
-    <tags>
-      
-      <tag>Error Collection</tag>
-      
-      <tag>Linux</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>Linux - Create and Delete User + Change Permission</title>
     <link href="/2022/11/29/Linux-manage-user/"/>
     <url>/2022/11/29/Linux-manage-user/</url>
@@ -38,6 +17,27 @@
       <tag>Linux</tag>
       
       <tag>Server Management</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Linux - FTP Connection - ECONNREFUSED</title>
+    <link href="/2022/11/29/Linux-ftp-econnection-refused/"/>
+    <url>/2022/11/29/Linux-ftp-econnection-refused/</url>
+    
+    <content type="html"><![CDATA[<h4 id="Failed-to-connect-the-sever-through-FileZilla"><a href="#Failed-to-connect-the-sever-through-FileZilla" class="headerlink" title="Failed to connect the sever through FileZilla"></a>Failed to connect the sever through FileZilla</h4><ul><li>The error information:</li></ul><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">ECONNREFUSED</span> - 连接被服务器拒绝<br></code></pre></td></tr></table></figure><ul><li>Follow 小明同学YYDS’s solution</li></ul><p><a href="https://blog.csdn.net/maoyuanming0806/article/details/78539655">https://blog.csdn.net/maoyuanming0806/article/details/78539655</a></p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Error Collection</tag>
+      
+      <tag>Linux</tag>
       
     </tags>
     
