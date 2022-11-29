@@ -4,27 +4,6 @@
   
   
   <entry>
-    <title>Linux - Create and Delete User + Change Permission</title>
-    <link href="/2022/11/29/Linux-manage-user/"/>
-    <url>/2022/11/29/Linux-manage-user/</url>
-    
-    <content type="html"><![CDATA[<p>As a root&#x2F;admin user, manage other user account and accessing permision.</p><h4 id="Create-a-new-user-account"><a href="#Create-a-new-user-account" class="headerlink" title="Create a new user account"></a>Create a new user account</h4><ul><li>Add a new user called <code>test</code></li></ul><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">sudo adduser <span class="hljs-built_in">test</span></span><br></code></pre></td></tr></table></figure><ul><li><p>Type and retype password of the new user</p></li><li><p>Force the new user to change her password after first logon (expire the current one)</p></li></ul><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">sudo passwd -e <span class="hljs-built_in">test</span></span><br></code></pre></td></tr></table></figure><h4 id="Delete-an-existing-user-account"><a href="#Delete-an-existing-user-account" class="headerlink" title="Delete an existing user account"></a>Delete an existing user account</h4><ul><li>Use the <code>userdel</code> command as follows:</li></ul><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">sudo userdel <span class="hljs-built_in">test</span></span><br></code></pre></td></tr></table></figure><ul><li>To remove home directory and mail spool too, enter:</li></ul><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">sudo userdel -r <span class="hljs-built_in">test</span></span><br></code></pre></td></tr></table></figure><p><a href="https://www.cyberciti.biz/faq/create-a-user-account-on-ubuntu-linux/">https://www.cyberciti.biz/faq/create-a-user-account-on-ubuntu-linux/</a></p><p>####Create Working Directory for New User (in &#x2F;mnt)</p><p>Remark: There are two harddisks mounted to the department sever. We need divide the users into different disks and balance the space usage. Take <code>/mnt/disk1</code> as example,</p><ul><li>Create new directory, named by user</li></ul><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">sudo <span class="hljs-built_in">mkdir</span> /mnt/disk1/test</span><br></code></pre></td></tr></table></figure><ul><li>Change the ownership of the directory</li></ul><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">sudo <span class="hljs-built_in">chown</span> -R [username] [user directory]</span><br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_">$ </span><span class="language-bash">sudo <span class="hljs-built_in">chown</span> -R <span class="hljs-built_in">test</span> /mnt/disk1/test</span><br></code></pre></td></tr></table></figure><h4 id="Change-Permission"><a href="#Change-Permission" class="headerlink" title="Change Permission"></a>Change Permission</h4><ul><li>Only the owner of the directory can read&#x2F;write&#x2F;excute it</li></ul><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">sudo <span class="hljs-built_in">chmod</span> -R 600 /mnt/disk1/test</span><br></code></pre></td></tr></table></figure><p><a href="https://blog.csdn.net/u013197629/article/details/73608613">https://blog.csdn.net/u013197629/article/details/73608613</a></p><p><a href="https://stackoverflow.com/questions/3740152/how-do-i-change-permissions-for-a-folder-and-its-subfolders-files">https://stackoverflow.com/questions/3740152/how-do-i-change-permissions-for-a-folder-and-its-subfolders-files</a></p>]]></content>
-    
-    
-    
-    <tags>
-      
-      <tag>Linux</tag>
-      
-      <tag>Server Management</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>Linux - FTP Connection - ECONNREFUSED</title>
     <link href="/2022/11/29/Linux-ftp-econnection-refused/"/>
     <url>/2022/11/29/Linux-ftp-econnection-refused/</url>
@@ -38,6 +17,27 @@
       <tag>Error Collection</tag>
       
       <tag>Linux</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Linux - Create and Delete User + Change Permission</title>
+    <link href="/2022/11/29/Linux-manage-user/"/>
+    <url>/2022/11/29/Linux-manage-user/</url>
+    
+    <content type="html"><![CDATA[<p>As a root&#x2F;admin user, manage other user account and accessing permision.</p><h4 id="Create-a-new-user-account"><a href="#Create-a-new-user-account" class="headerlink" title="Create a new user account"></a>Create a new user account</h4><ul><li>Add a new user called <code>test</code></li></ul><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">sudo adduser <span class="hljs-built_in">test</span></span><br></code></pre></td></tr></table></figure><ul><li><p>Type and retype password of the new user</p></li><li><p>Force the new user to change her password after first logon (expire the current one)</p></li></ul><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">sudo passwd -e <span class="hljs-built_in">test</span></span><br></code></pre></td></tr></table></figure><h4 id="Delete-an-existing-user-account"><a href="#Delete-an-existing-user-account" class="headerlink" title="Delete an existing user account"></a>Delete an existing user account</h4><ul><li>Use the <code>userdel</code> command as follows:</li></ul><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">sudo userdel <span class="hljs-built_in">test</span></span><br></code></pre></td></tr></table></figure><ul><li>To remove home directory and mail spool too, enter:</li></ul><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">sudo userdel -r <span class="hljs-built_in">test</span></span><br></code></pre></td></tr></table></figure><p><a href="https://www.cyberciti.biz/faq/create-a-user-account-on-ubuntu-linux/">https://www.cyberciti.biz/faq/create-a-user-account-on-ubuntu-linux/</a></p><p>####Create Working Directory for New User (in &#x2F;mnt)</p><p>Remark: There are two harddisks mounted to the department sever. We need divide the users into different disks and balance the space usage. Take <code>/mnt/disk1</code> as example,</p><ul><li>Create new directory, named by user</li></ul><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">sudo <span class="hljs-built_in">mkdir</span> /mnt/disk1/test</span><br></code></pre></td></tr></table></figure><ul><li>Change the ownership of the directory</li></ul><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">sudo <span class="hljs-built_in">chown</span> -R [username] [user directory]</span><br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_">$ </span><span class="language-bash">sudo <span class="hljs-built_in">chown</span> -R <span class="hljs-built_in">test</span> /mnt/disk1/test</span><br></code></pre></td></tr></table></figure><h4 id="Change-Permission"><a href="#Change-Permission" class="headerlink" title="Change Permission"></a>Change Permission</h4><ul><li>Only the owner of the directory can read&#x2F;write&#x2F;excute it</li></ul><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">sudo <span class="hljs-built_in">chmod</span> -R 600 /mnt/disk1/test</span><br></code></pre></td></tr></table></figure><p><a href="https://blog.csdn.net/u013197629/article/details/73608613">https://blog.csdn.net/u013197629/article/details/73608613</a></p><p><a href="https://stackoverflow.com/questions/3740152/how-do-i-change-permissions-for-a-folder-and-its-subfolders-files">https://stackoverflow.com/questions/3740152/how-do-i-change-permissions-for-a-folder-and-its-subfolders-files</a></p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Linux</tag>
+      
+      <tag>Server Management</tag>
       
     </tags>
     
