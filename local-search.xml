@@ -4,6 +4,48 @@
   
   
   <entry>
+    <title>Shiny-NameSpace Error</title>
+    <link href="/2023/02/14/R-Shiny-namespace-error/"/>
+    <url>/2023/02/14/R-Shiny-namespace-error/</url>
+    
+    <content type="html"><![CDATA[<h3 id="Failed-to-Deploy-Shiny-Sever"><a href="#Failed-to-Deploy-Shiny-Sever" class="headerlink" title="Failed to Deploy Shiny Sever"></a>Failed to Deploy Shiny Sever</h3><p>After installing all required the packages, the shiny still reports “loading namespace” error, i.e.,</p><blockquote><p>su: ignoring –preserve-environment, it’s mutually exclusive with –login<br><strong>Error in loadNamespace(x) : there is no package called ‘jsonlite’</strong><br>Calls: local … loadNamespace -&gt; withRestarts -&gt; withOneRestart -&gt; doWithOneRestart<br>Execution halted</p></blockquote><p>The critical bug occurs at the second line. Though I have checked the installation and loading of package <code>jsonlite</code>, the problem keeps unsolved.</p><p>After searching the probable solution, one blog <sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="[Shiny Server Error in loadNamespace(name)](https://community.rstudio.com/t/shiny-server-error-in-loadnamespace-name/71274)">[1]</span></a></sup> reminds me that shiny work as the “root” user when offering service. It cannot access the “user-only” libraries on the server.</p><p>So I checked the existing library paths by <code>.libPaths()</code>, and the found four different paths:</p><blockquote><p>[1] “&#x2F;home&#x2F;arwen&#x2F;R&#x2F;x86_64-pc-linux-gnu-library&#x2F;4.1”<br>[2] “&#x2F;usr&#x2F;local&#x2F;lib&#x2F;R&#x2F;site-library”<br>[3] “&#x2F;usr&#x2F;lib&#x2F;R&#x2F;site-library”<br>[4] “&#x2F;usr&#x2F;lib&#x2F;R&#x2F;library”</p></blockquote><p>Except the first one, the other three global libraries are all empty. Then I reinstalled the packages as the root user by <code>sudo R</code>.<br>The shiny runs successfully!!</p><p>&#96;&#96;&#96;</p><section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span><a href="https://community.rstudio.com/t/shiny-server-error-in-loadnamespace-name/71274">Shiny Server Error in loadNamespace(name)</a><a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Error Collection</tag>
+      
+      <tag>R</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Python - `Mulitiprocessing`- Pool</title>
+    <link href="/2022/12/03/Python-multiprocessing/"/>
+    <url>/2022/12/03/Python-multiprocessing/</url>
+    
+    <content type="html"><![CDATA[<h3 id="What-is-the-name-variable"><a href="#What-is-the-name-variable" class="headerlink" title="What is the __name__ variable?"></a>What is the <code>__name__</code> variable?</h3>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Python</tag>
+      
+      <tag>Concurrency</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Python - if__name__ == &#39;__main__&#39;</title>
     <link href="/2022/12/01/Python-if-name-main/"/>
     <url>/2022/12/01/Python-if-name-main/</url>
